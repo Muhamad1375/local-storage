@@ -6,6 +6,9 @@ eventListener();
 function eventListener() {
       //Form submission
       document.querySelector('#form').addEventListener('submit', newTweet);
+      //remove tweet from the list
+      tweetList.addEventListener('click', removeTweet);
+
 }
 
 //Functions
@@ -25,3 +28,9 @@ function newTweet(e) {
       //add to the list
       tweetList.appendChild(li);
 }
+
+//removes the tweets from the dom
+function removeTweet(e) {
+      if(e.target.classList.contains('remove-tweet')) {
+            e.target.parentElement.remove();
+      }
